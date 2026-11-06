@@ -1,0 +1,8 @@
+# dsh-trae-video bundle patch.
+#
+# 只挂宿主半身。视频生成是纯 Node 侧 HTTP 能力（鉴权 + 提交 + SSE 轮询 + 落盘），
+# 不进浏览器渲染层；客户端只通过 commands 暴露一个可选的命令行入口。
+- insert:
+    - id: trae-video
+      name: 'dsh-trae-video'
+      config: {}

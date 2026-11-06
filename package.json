@@ -1,0 +1,45 @@
+{
+  "name": "dsh-trae-video",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "TRAE CN 视频生成复刻插件 —— 复用 our-free-model 的 Trae 账号凭据，调用 api/ide/v1/tool_text_to_video_stream，在 DSH 内复现 TRAE 的 AI 生成视频能力（t2v/i2v/v2v/本地素材上传）。",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "trae",
+    "video-generation",
+    "seedance"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cli.mjs",
+    "src",
+    "cordis.patch.yml",
+    "INSTALL.md"
+  ],
+  "license": "MIT"
+}
