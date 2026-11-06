@@ -10,6 +10,30 @@
 
 > 本插件**不依赖** `dsh-plugin-ai-drama` 或 `dsh-drama-trae`，可完全独立安装使用。
 
+## 从 GitHub 拉取源码继续开发（推荐开发用）
+
+仓库：<https://github.com/wy13013560664/dsh-trae-video>
+
+```bash
+git clone https://github.com/wy13013560664/dsh-trae-video.git
+cd dsh-trae-video
+npm ls --depth=0 || true         # 无运行时依赖，纯 node stdlib
+node cli.mjs --list-accounts     # 先确认 Trae 账号池可用
+```
+
+然后把它挂进 DSH profile（软链即可，改源码即时生效）：
+
+```bash
+ln -sfn "$PWD" ~/.dsh/profiles/desktop/node_modules/dsh-trae-video
+# 重启 DSH，侧栏出现「AI 视频生成」
+```
+
+国内网络拉取慢时可用反代前缀：
+
+```bash
+git clone https://ghfast.top/https://github.com/wy13013560664/dsh-trae-video.git
+```
+
 ## 方式 A：`dsh plugin add`（推荐）
 
 ```bash
